@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check Order Status - Tarek Retail</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="divicw" data-bind="bece0be0-b0a2-11ee-aec0-06d32164fa93" data-org=""></div>
+  <script>
+    // Script remains unchanged
+  </script>
+  <header>
+    <h1>Tarek Retail</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/reservation">Check Order Status</a></li>
+        <li><a href="/payment">Check Payment Status</a></li>
+        <li><a href="/manage">Manage Your Order</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Check Order Status</h1>
+    <form action="/api/check-order" method="GET">
+      <label for="orderId">Order ID:</label>
+      <input type="text" id="orderId" name="orderId" required>
+      <button type="submit">Check Status</button>
+    </form>
+    <% if (order) { %>
+      <div class="order-details">
+        <h2>Order Details</h2>
+        <p><strong>Order Number:</strong> <%= order.orderNumber %></p>
+        <p><strong>Product:</strong> <%= order.productName %></p>
+        <p><strong>Quantity:</strong> <%= order.quantity %></p>
+        <p><strong>Price:</strong> <%= order.price %></p> <!-- Updated price -->
+      </div>
+    <% } %>
+  </main>
+  <footer>
+    <p>&copy; 2024 Tarek Retail. All rights reserved.</p> <!-- Updated footer -->
+  </footer>
+</body>
+</html>
